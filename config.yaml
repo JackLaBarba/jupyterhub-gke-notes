@@ -1,0 +1,18 @@
+proxy:
+  secretToken: ""
+
+singleuser:
+  image:
+    # Get the latest image tag at:
+    # https://hub.docker.com/r/jupyter/datascience-notebook/tags/
+    # Inspect the Dockerfile at:
+    # https://github.com/jupyter/docker-stacks/tree/master/datascience-notebook/Dockerfile
+    name: jupyter/datascience-notebook
+    tag: e690099c57a6
+  defaultUrl: "/lab"
+
+# Start jupyter lab by default
+hub:
+  extraConfig:
+    jupyterlab: |
+      c.Spawner.cmd = ['jupyter-labhub']
